@@ -1,26 +1,88 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-customgreys-primarybg: #1b1c22;
+  --color-customgreys-secondarybg: #25262f;
+  --color-customgreys-darkGrey: #17181d;
+  --color-customgreys-darkerGrey: #3d3d3d;
+  --color-customgreys-dirtyGrey: #6e6e6e;
+}
+
+/* Using CSS variables instead of theme() */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --sidebar-background: #1b1c22; /* Custom grey primary background */
+  --sidebar-foreground: #ffffff; /* Custom white color */
+  --sidebar-primary: #7878fc; /* Primary color */
+  --sidebar-primary-foreground: #ffffff; /* Primary foreground color */
+  --sidebar-accent: #3d3d3d; /* Darker grey accent */
+  --sidebar-accent-foreground: #6e6e6e; /* Dirty grey accent foreground */
+  --sidebar-border: #25262f; /* Custom grey secondary background */
+  --sidebar-ring: #7878fc; /* Primary color ring */
+  --popover: #1b1c22; /* Custom grey primary background */
+  --popover-foreground: #ffffff; /* White foreground */
+
+  --background: #1b1c22; /* Custom grey primary background */
+  --foreground: #ffffff; /* White foreground */
+
+  --primary: #7878fc; /* Primary color */
+  --primary-foreground: #ffffff; /* White foreground */
+
+  --muted: #9898fd; /* Muted primary color */
+  --muted-foreground: #6e6e6e; /* Dirty grey foreground */
+
+  --accent: #9898fd; /* Accent color */
+  --accent-foreground: #ffffff; /* White foreground for accent */
+
+  --border: #25262f; /* Custom grey secondary background */
+  --ring: #7878fc; /* Primary color ring */
+
+  --card: #1b1c22; /* Custom grey primary background */
+  --card-foreground: #ffffff; /* White foreground */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Dark mode */
+.dark {
+  --sidebar-background: #1b1c22; /* Custom grey primary background */
+  --sidebar-foreground: #ffffff; /* White foreground */
+  --sidebar-primary: #7878fc; /* Primary color */
+  --sidebar-primary-foreground: #ffffff; /* White foreground for primary */
+  --sidebar-accent: #3d3d3d; /* Darker grey accent */
+  --sidebar-accent-foreground: #6e6e6e; /* Dirty grey accent foreground */
+  --sidebar-border: #25262f; /* Custom grey secondary background */
+  --sidebar-ring: #7878fc; /* Primary color ring */
+  --popover: #1b1c22; /* Custom grey primary background */
+  --popover-foreground: #ffffff; /* White foreground */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --background: #1b1c22; /* Custom grey primary background */
+  --foreground: #ffffff; /* White foreground */
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --primary: #7878fc; /* Primary color */
+  --primary-foreground: #ffffff; /* White foreground */
+
+  --muted: #9898fd; /* Muted primary color */
+  --muted-foreground: #6e6e6e; /* Dirty grey foreground */
+
+  --accent: #9898fd; /* Accent color */
+  --accent-foreground: #ffffff; /* White foreground for accent */
+
+  --border: #25262f; /* Custom grey secondary background */
+  --ring: #7878fc; /* Primary color ring */
+
+  --card: #1b1c22; /* Custom grey primary background */
+  --card-foreground: #ffffff; /* White foreground */
+}
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-size: 0.875rem; /* Tailwind의 text-sm */
+  color: #d1d5db; /* Tailwind의 text-gray-300 */
+  background-color: #1b1c22; /* customgreys-primarybg에 해당하는 색상 */
 }
